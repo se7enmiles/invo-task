@@ -5,13 +5,10 @@ class AuthorController {
 
 	public function actionIndex(){
 
-		$authorsList = array();
-		$authorsList = Author::getAuthorList();
+		$authorList = array();
+		$authorList = Author::getAuthorList();
 
-		// TODO: remove this snippet
-		echo '<pre>';
-		print_r($authorsList);
-		echo '</pre>';
+		require_once (ROOT.'/views/author/index.php');
 
 		return true;
 	}

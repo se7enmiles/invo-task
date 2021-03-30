@@ -9,10 +9,7 @@ class BookController {
 		$booksList = array();
 		$booksList = Book::getBooksList();
 
-		// TODO: remove this snippet
-		echo '<pre>';
-		print_r($booksList);
-		echo '</pre>';
+		require_once (ROOT.'/views/book/index.php');
 
 		return true;
 	}

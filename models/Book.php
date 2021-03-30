@@ -41,4 +41,26 @@ class Book {
 		}
 	}
 
+
+	public static function getBookByAuthorId($id){
+
+		$id=intval($id);
+
+		if ($id) {
+
+			$db = Database::connect();
+
+			$bookOfAuthorList = array();
+
+			$result = $db->query( 'SELECT `book_id` FROM `book_author` WHERE `author_id`=' . $id );
+
+			$i=0;
+			while($row = $result->fetch()){
+				$bookOfAuthorList[$i]['book_id'] = $row['book_id'];
+				$i++;
+			}
+			return $bookOfAuthorList;
+		}
+	}
+
 }
