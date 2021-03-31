@@ -26,7 +26,9 @@ class Router {
 	}
 
 	/**
-	 *
+	 * analyzing request, generates controller name, action name
+	 * includes controller class and runs the action with parameters (id required)
+	 * single universal interface for all methods
 	 */
 	public function run(){
 		$uri = $this->getUri();
@@ -44,6 +46,16 @@ class Router {
 
 				if(file_exists($controllerFile)){
 					include_once ($controllerFile);
+				} else {
+					header('Location: /error');
+					return true;
+				}
+
+				if (method_exists($controllerName, $actionName)) {
+					// Method does exist
+				} else {
+					header('Location: /error');
+					return true;
 				}
 
 				$parameters = $segments;

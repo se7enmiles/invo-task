@@ -1,12 +1,16 @@
 <?php
 
-include_once (ROOT.'/models/Book.php');
-
+/**
+ * Class BookController
+ */
 class BookController {
 
+	/**
+	 * action method for getting all books
+	 * @return bool
+	 */
 	public function actionIndex(){
 
-		$booksList = array();
 		$booksList = Book::getBooksList();
 
 		require_once (ROOT.'/views/book/index.php');
@@ -14,15 +18,19 @@ class BookController {
 		return true;
 	}
 
+	/**
+	 * action method for "View book"
+	 * @param $id
+	 *
+	 * @return bool
+	 */
 	public function actionView($id){
 
 		if ($id){
-			$bookSingle = Book::getBookById($id);
 
-			// TODO: remove this snippet
-			echo '<pre>';
-			print_r($bookSingle);
-			echo '</pre>';
+			$book = Book::getBookById($id);
+
+			require_once (ROOT.'/views/book/view.php');
 
 			return true;
 		}

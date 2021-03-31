@@ -1,12 +1,12 @@
 <?php
-include_once (ROOT.'/models/Author.php');
+
+// TODO: check functions and docs
 
 class AuthorController {
 
 	public function actionIndex(){
 
-		$authorList = array();
-		$authorList = Author::getAuthorList();
+		$authorsList = Author::getAuthorList();
 
 		require_once (ROOT.'/views/author/index.php');
 
@@ -16,12 +16,11 @@ class AuthorController {
 	public function actionView($id){
 
 		if ($id){
-			$authorSingle = Author::getAuthorById($id);
+			$author = Author::getAuthorById($id);
 
-			// TODO: remove this snippet
-			echo '<pre>';
-			print_r($authorSingle);
-			echo '</pre>';
+			require_once (ROOT.'/views/author/view.php');
+
+			return true;
 		}
 	}
 

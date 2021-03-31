@@ -4401,11 +4401,12 @@ td.dataTables_empty {
   width: 100%;
   min-height: 100%;
   background: url("../img/bg.png") left top repeat #33414e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .login-container .login-box {
   width: 400px;
-  margin: 0px auto;
-  padding-top: 100px;
 }
 .login-container .login-box .login-logo {
   background: url("../img/logo-lr.png") top center no-repeat;
