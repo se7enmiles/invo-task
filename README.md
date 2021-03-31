@@ -6,7 +6,7 @@ ___
 * Admin dashboard template is taken from [Theme Forest - Atlant](https://themeforest.net/item/atlant-bootstrap-admin-template/9217590)
 * Database dummy data is generated using [Fill Database](http://filldb.info/) 
 
-![image] (http://books.surenmadoyan.com/books/images/dbConfig.png)
+<img width="100" src="images/dbConfig.png" alt="">
 <img src="images/homePage.png" alt="">
 <img src="images/loginPage.png" alt="">
 <img src="images/registerPage.png" alt="">
