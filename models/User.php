@@ -18,12 +18,14 @@ class User
 	{
 		$db = Database::connect();
 
+		$passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
 		$sql = 'INSERT INTO `user` (`username`, `password`) '
 		       . 'VALUES (:username, :password)';
 
 		$result = $db->prepare($sql);
 		$result->bindParam(':username', $username, PDO::PARAM_STR);
-		$result->bindParam(':password', $password, PDO::PARAM_STR);
+		$result->bindParam(':password', $passwordHash, PDO::PARAM_STR);
 
 		return $result->execute();
 	}
@@ -58,16 +60,18 @@ class User
     {
         $db = Database::connect();
 
-        $sql = 'SELECT * FROM user WHERE username = :username AND password = :password';
+        $sql = 'SELECT * FROM `user` WHERE `username` = :username';
 
         $result = $db->prepare($sql);
         $result->bindParam(':username', $username, PDO::PARAM_STR);
-        $result->bindParam(':password', $password, PDO::PARAM_INT);
         $result->execute();
+		$user = $result->fetch(PDO::FETCH_ASSOC);
 
-        $user = $result->fetch();
+		$passwordHash = $user['password'];
 
-        if ($user) {
+	    $check = password_verify($password, $passwordHash);
+
+	    if ($check) {
             return $user['id'];
         }
         return false;
@@ -121,7 +125,7 @@ class User
 	 */
     public static function checkUsername($username)
     {
-        if (strlen($username) >= 5) {
+        if (strlen($username) >= 2) {
             return true;
         }
         return false;

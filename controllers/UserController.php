@@ -84,19 +84,20 @@ class UserController
 	 */
 	public function actionLogout()
 	{
+
 		unset($_SESSION["user"]);
 
 		header("Location: /user/login");
 	}
 
 	/**
-	 * action method for "Logout"
-	 * deletes the user from session
+	 * action method for "error"
+	 * redirects to 404 page
 	 */
 	public function actionError()
 	{
 
-		require_once(ROOT.'/views/user/404.php');
+		header("Location: /views/user/404.php");
 	}
 
 }

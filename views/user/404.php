@@ -22,7 +22,7 @@
 	<div class="error-actions">
 		<div class="row">
 			<div class="col-md-6">
-				<button class="btn btn-info btn-block btn-lg" onClick="document.location.href = '/';">Back to dashboard</button>
+				<a class="btn btn-info btn-block btn-lg" href="/books">Back to dashboard</a>
 			</div>
 			<div class="col-md-6">
 				<button class="btn btn-primary btn-block btn-lg" onClick="history.back();">Previous page</button>
