@@ -2,6 +2,10 @@
 <div class="page-sidebar">
 	<!-- START X-NAVIGATION -->
 	<ul class="x-navigation">
+<!--		<li class="xn-logo">-->
+<!--			<a href="index.html">Dashboard</a>-->
+<!--			<a href="#" class="x-navigation-control"></a>-->
+<!--		</li>-->
 		<li class="xn-profile">
 			<a href="#" class="profile-mini">
 				<img src="/template/assets/images/users/avatar.png" alt=""/>
@@ -11,21 +15,7 @@
 					<img src="/template/assets/images/users/avatar.png" alt=""/>
 				</div>
 				<div class="profile-data">
-					<?php if(User::isGuest()): ?>
-						<div class="profile-data-name">Guest</div>
-						<div class="alert">
-	                        <div class="profile-data-name">
-	                            <a href="/user/login" class="btn btn-success btn-block">Login</a>
-	                        </div>
-						</div>
-						<div class="alert">
-							<div class="profile-data-name">
-								<a href="/user/register" class="btn btn-default btn-block">Register</a>
-							</div>
-						</div>
-					<?php else: ?>
-						<div class="profile-data-name">User</div>
-					<?php endif; ?>
+                    <div class="profile-data-name">Administrator</div>
 				</div>
 			</div>
 		</li>

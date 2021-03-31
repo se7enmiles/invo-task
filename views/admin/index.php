@@ -2,11 +2,13 @@
 
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
+
 	<?php if (User::checkAdmin()) :
 		include (ROOT.'/views/layouts/sidebar_admin.php');
 	else:
 		include (ROOT.'/views/layouts/sidebar.php');
 	endif; ?>
+
 
 	<!-- PAGE CONTENT -->
 	<div class="page-content">
@@ -43,6 +45,9 @@
                                         <th>Topic</th>
                                         <th width="100">Pages</th>
                                         <th width="100">Price</th>
+                                        <?php if (!User::isGuest() && AdminBase::checkAdmin()): ?>
+                                            <th width="120">actions</th>
+                                        <?php endif; ?>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -58,6 +63,13 @@
                                         <td><?php echo $book['topic']; ?></td>
                                         <td><?php echo $book['pages']; ?></td>
                                         <td>$ <?php echo $book['price']; ?></td>
+
+                                        <?php if (!User::isGuest() && AdminBase::checkAdmin()): ?>
+                                            <td>
+                                                <a href="/admin/update/<?php echo $book['id']; ?>" class="btn btn-default btn-rounded btn-condensed btn-sm"><span class="fa fa-pencil"></span></a>
+                                                <a href="/admin/delete/<?php echo $book['id']; ?>" class="btn btn-danger btn-rounded btn-condensed btn-sm"><span class="fa fa-times"></span></a>
+                                            </td>
+                                        <?php endif; ?>
                                     </tr>
                                     <?php endforeach; ?>
                                     </tbody>
