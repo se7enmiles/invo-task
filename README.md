@@ -6,35 +6,35 @@ ___
 >***Live link for online demonstration [Books](http://books.surenmadoyan.com)***
 
 >***Refer to the [screenshots table](#table) for interface instructions***
-##### Local installation
+#### Local installation
 1. Clone this repo
 2. Download [this db dump](/config/database.sql)
 3. Change db credentials in `/config/db.php`
-##### Database structure
+#### Database structure
 1. Books
 2. Authors
 3. Books-Authors Relation (ONE to MANY)
 4. Users
-##### User info
+#### User info
 1. You can register as a new user, without admin access
 2. Or login as admin (`admin/123456`) or as user (`user/123456`)
 3. All users has access to read data
-##### Admin privileges
+#### Admin privileges
 1. Create books (along with choosing/creating authors)
 2. Update books (along with creating/changing authors and updating book-author relation)
 3. Delete books (along with deletion of relations of deleted book)
-##### Important to say
+#### Important to say
 1. Authors CRUD is not implemented as a separate functionality, but author creation has pretty strict logic to prevent duplication in databases
 2. Application is based on simple MVC pattern and popular routing logic, all pages and functions work on url `.../controller/action` logic
 3. The interface might have obvious wrong parts, they are created on purpose for demonstration of some functionality, like denied access etc.
 4. Validation rules are simple, just for demonstration
-##### Confession
+#### Confession
 1. I could write a simple solution and complete the task quickly, but I dived into process and tried to do my best working on this project
 2. I tried to use/implement/show some technologies and functionality to demonstrate and prove my skills, even my English
 3. During work I tried to keep track on working process using `git` to show the whole process
 4. Regardless of any decision, I appreciate for giving me this opportunity, I learned a bunch of new stuff, like this Markdown syntax etc.
 5. I will continue working on this project, because it have much to be improved.
-
+___
 * Admin dashboard template is taken from [Theme Forest - Atlant](https://themeforest.net/item/atlant-bootstrap-admin-template/9217590)
 * Database dummy data is generated using [Fill Database](http://filldb.info/) 
 ___
