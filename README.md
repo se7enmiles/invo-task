@@ -41,7 +41,7 @@ ___
 ***Refering back to our interview I want to mention some points***
 1. **Incapsulation** is realized in [Router class](/components/Router.php) _**getUri**_ method which is private, and can be called only inside the Router class
 2. **Polimorfism** is realized in [Router class](/components/Router.php) _**run**_ method, which takes a request string and generates controllers and methods names
-3. **Password Hashing** is realized in [User model](/models/User.php) ***register*** and ***login*** methods using `password_hash()` and `password_validate()` functions
+3. **Password Hashing** is realized in [User model](/models/User.php#LC59) ***register*** and ***login*** methods using `password_hash()` and `password_validate()` functions
 4. **SQL injection prevention** is realized all over the functions using `PDO Class` which has much functionality to deeply analyze sql requests and responses 
 
 <div id="table">
