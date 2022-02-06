@@ -32,17 +32,14 @@ ___
 1. I could write a simple solution and complete the task quickly, but I dived into process and tried to do my best working on this project
 2. I tried to use/implement/show some technologies and functionality to demonstrate and prove my skills, even my English
 3. During work I tried to keep track on working process using `git` to show the whole process
-4. Regardless of any decision, I appreciate for giving me this opportunity, I learned a bunch of new stuff, like this Markdown syntax etc.
-5. I will continue working on this project, because it have much to be improved.
 ___
 * Admin dashboard template is taken from [Theme Forest - Atlant](https://themeforest.net/item/atlant-bootstrap-admin-template/9217590)
 * Database dummy data is generated using [Fill Database](http://filldb.info/) 
 ___
 ***Refering back to our interview I want to mention some points***
-1. **Incapsulation** is realized in [Router class](/components/Router.php) _**getUri**_ method which is private, and can be called only inside the Router class
+1. **Encapsulation** is realized in [Router class](/components/Router.php) _**getUri**_ method which is private, and can be called only inside the Router class
 2. **Polimorfism** is realized in [Router class](/components/Router.php) _**run**_ method, which takes a request string and generates controllers and methods names
 3. **Password Hashing** is realized in [User model](/models/User.php#LC59) ***register*** and ***login*** methods using `password_hash()` and `password_validate()` functions
-4. **SQL injection prevention** is realized all over the functions using `PDO Class` which has much functionality to deeply analyze sql requests and responses 
 
 <div id="table">
 
